@@ -30,7 +30,6 @@ fn try_message(input: TokenStream) -> Result<TokenStream, Error> {
     };
 
     let pkg_name = prost_attrs(input.attrs.clone())
-        .unwrap()
         .iter()
         .find(|meta| meta.path().is_ident("package"))
         .and_then(|meta| match meta {
